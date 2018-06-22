@@ -1,0 +1,320 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jacobs Landscape Poster
+% LaTeX Template
+% Version 1.1 (14/06/14)
+%
+% Created by:
+% Computational Physics and Biophysics Group, Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+% 
+% Further modified by:
+% Nathaniel Johnston (nathaniel@njohnston.ca)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+%\PassOptionsToPackage{svgnames,table}{xcolor}
+\documentclass[final]{beamer}
+%\usepackage[svgnames]{xcolor}
+\usepackage[scale=.8]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{pdfpages}
+\usetheme{confposter} % Use the confposter theme supplied with this template
+%\usepackage{animate}
+
+\setbeamercolor{block title}{fg=Grey,bg=Khaki} % Colors of the block titles
+%\setbeamercolor{block title}{fg=white, bg=MistyRose}
+\setbeamercolor{block body}{fg=Grey,bg=Khaki} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=Grey,bg=Salmon} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=Grey,bg=Khaki} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+%\definecolor{MyBackground}{RGB}{1.0000    0.9451    0.6549}
+\setbeamercolor{background canvas}{bg=Khaki}
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+%\usepackage{movie15}
+\usepackage{adjustbox}
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{36in} % A0 width: 46.8in
+\setlength{\paperheight}{24in} % A0 height: 33.1in
+\setlength{\textwidth}{22in}
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.22\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.464\paperwidth} % Width of two columns
+\setlength{\threecolwid}{0.708\paperwidth} % Width of three columns
+\setlength{\topmargin}{-1in} % Reduce the top margin size
+%-----------------------------------------------------------
+%\setbeamercolor{background canvas}{bg=WhiteSmoke}
+\usepackage{graphicx}  % Required for including images
+
+\usepackage{booktabs} % Top and bottom rules for tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{ \color{Grey} Combating stereotypes of math and enhancing appreciation for plant biology in undergraduate students using video games } % Poster title
+
+\author{\color{Grey}\textbf{Renee Dale\textsuperscript{1,2}} } % Author(s)
+
+\institute{\color{Grey}Biological Sciences\textsuperscript{1}   $\qquad$        Experimental Statistics\textsuperscript{2} $\qquad$  \\ Louisiana State University} % Institution(s)
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+%\vspace{-1.5cm}
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The first column
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\begin{block}{\color{Grey}\textbf{Introduction}}
+\small{\textit{Vision and Change} calls for more technical training in the biological sciences \cite{visionchange}. The social perception of\textbf{ math being for 'geniuses' }serves to enhance the struggles of disadvantaged groups \cite{ams,genius}. Educators experiencing \textbf{math anxiety} are not confident in their ability to teach students the quantitative skills necessary for a technological age. At the same time, student interest in plant biology wanes with age as \textbf{students find plants 'boring'}, although this is remedied when students learn more detail about plants \cite{plantinterest1}. We propose to address both of these problems by developing a video game based on a mathematical model of plant cell dynamics. As players go through the 3 modules of the game, they will control and view increasingly more complex mathematical models. The final module of the game allows players to build a model of the plant cell and play with parameters directly. Structuring this as a \textbf{video game helps to bypass students' and teachers' self-doubt }of their own mathematical prowess while simultaneously allowing them to explore applied math and engage in inquiry-based hypothesis testing.}
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+\begin{alertblock}{\color{Grey}\textbf{Module 1}}
+	
+	\begin{figure}
+		\includegraphics[width=.9\linewidth]{module1.png}
+		%\caption{Newly added components are highlighted. New parameter values are indicated with black boxes.}
+	\end{figure}
+	{\small This initial game will include increasingly complex mathematical models. Players will be presented with a problem scenario based on a set of randomly-generated plant characteristics. Players will be tasked with optimizing model parameters in order to allow the plant to grow and reach maturity. The game will begin with the amount of water provided and progressing to light intensity and color, daylight hours, and soil nutrient availability. Players will observe graphs tracking the progress of the plant as well as animated plant growth. This will allow players to \textbf{develop math confidence while developing interest in plants} by considering the complexities of adaptation.}
+\end{alertblock}
+
+%------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
+%\includepdf[pages={1}]{cellcycleposter.pdf}
+
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
+
+%----------------------------------------------------------------------------------------
+%	MATERIALS
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.1
+
+\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+%	METHODS\textit{}
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.2
+
+\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+
+%----------------------------------------------------------------------------------------
+%	IMPORTANT RESULT
+%----------------------------------------------------------------------------------------
+\vspace{-1cm}
+\begin{alertblock}{\color{Grey}\textbf{Module 2}}
+\begin{figure}
+	\includegraphics[width=.8\linewidth]{poster_figs.png}
+
+\end{figure}
+\small {Players control from one to three model parameters (\textbf{diffusivity, Brownian motion, and binding strength}) which affects the entire model as a system. They can also express a limited amount of proteins of their choosing. Their objective is to produce the maximum luminescence due to downstream gene production while avoiding drought stress. Players complete the game when the 'light' meter reaches a pre-determined value, and their score is based on their time-to-completion and a quantification of stress due to accumulated salt.\textit{ \textbf{The two feedback loops in this system make it a difficult optimization task.}} This reinforces the \textbf{concepts of biological trade-offs and feedback loops, and exposes players to the idea of parameter optimization}.}
+\end{alertblock} 
+
+%----------------------------------------------------------------------------------------
+
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
+
+\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
+
+%----------------------------------------------------------------------------------------
+%	MATHEMATICAL SECTION
+%----------------------------------------------------------------------------------------
+\vspace{-1cm}
+\begin{block}{\textbf{\Large Objectives}}
+%	\vspace{-2cm}
+{\large 
+\begin{enumerate}
+	\itemsep0em 
+	%	\item give players exposure to math, which can decrease math-phobia 
+	%\item gain math confidence
+	%\item gain an appreciation for plant traits and adaptations, which increases plant interest 
+	%\item gain exposure to mathematical modeling
+	%\item and develop testable hypotheses in an inquiry-based electronic lab setting. 
+	\item Gain increased \textbf{confidence in their math skills}%become more familiar with mathematical modeling
+	\item Gain \textbf{appreciation and interest }in plant biology \cite{plantinterest1}%appreciate and visualize the invisible behaviors of plants
+	\item Gain\textbf{ exposure to mathematical modeling} as a scientific tool 
+	%	\item improve their ability to reason in terms of systems %learn to think in terms of systems
+	\item Improve their \textbf{engagement }via inquiry-based learning \cite{math2}%conduct virtual experiments and test their hypotheses
+\end{enumerate}
+}
+
+\end{block}
+%\centering
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.1
+
+\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+%	RESULTS
+%----------------------------------------------------------------------------------------
+\vspace{-1cm}
+\begin{block}{Acknowledgements}
+	
+	\small{This work was supported in part by the Society for Mathematical Biology Education and Outreach Grant. } \\
+	
+\end{block}
+
+%\vspace{-2.75cm}
+
+%\vspace{1cm}
+\begin{alertblock}{Contact Information}
+	
+	\begin{itemize}
+		\small{
+			\item Web: {rdale1.github.io}
+			\item Email: {rdale1@lsu.edu}
+			\item Twitter: @b10\_m0del1ng}
+	\end{itemize}
+	
+\end{alertblock}
+
+
+%\begin{minipage}{.5\textwidth}
+\centering
+		\includegraphics[width=.6\linewidth]{SMBPositive.png}
+%\end{minipage}%
+%\begin{minipage}{.5\textwidth}
+			%	\includegraphics[width=.8\linewidth]{LSU_Purple_RGB.png} %& \hfill & 
+%\end{minipage}
+
+
+
+%	\end{figure}
+	
+	
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.2
+
+\end{columns} % End of the split of column 2
+
+\end{column} % End of the second column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The third column
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSION
+%----------------------------------------------------------------------------------------
+
+\begin{alertblock}{\color{Grey}\textbf{Module 3}}
+	\begin{figure}
+	\includegraphics[width=.9\linewidth]{module3.png}
+	%\caption{Newly added components are highlighted. New parameter values are indicated with black boxes.}
+\end{figure}
+%\vskip
+%\begin{figure}%%
+%	\centering
+%	\animategraphics[width=.8\linewidth,loop,autoplay]{10}{./gifs/img00}{01}{54}
+%\end{figure}
+\small{After being introduced to the drought stress response in plants, players will be given the ability to \textbf{create their own mathematical model}. Players will be given a list of components with their behaviors. Players drag and drop into the cell, and control the parameters associated with the protein. Players will be able to view the equations they have constructed by clicking on a window. The objective of this structure is to \textbf{maximize player exposure to mathematical modeling while maximizing their confidence }in their ability. }
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+\vspace{1cm}
+\begin{block}{References}
+\small{
+\begin{thebibliography}{99}
+\bibitem{ams} https://blogs.ams.org/blogonmathblogs/2015/02/03/math-and-the-genius-myth/
+\bibitem{genius}Leslie, S.-J., Cimpian, A., Meyer, M., and Freeland, E. (2015). Expectations of brilliance underlie gender distributions across academic disciplines. Science 
+\bibitem{visionchange}Woodin, T., Carter, V.C., and Fletcher, L. (2010). Vision and Change in Biology Undergraduate Education, A Call for Action--Initial Responses. Cell Biology Education 
+\bibitem{plantinterest1}Lindemann-Matthies, P. (2005). 
+Loveable mammals and lifeless plants: how children's interest in common local organisms can be enhanced through observation of nature. International Journal of Science Education
+%\bibitem{plantinterest3}
+\bibitem{math2}Afari, E., Aldridge, J.M., and Fraser, B.J. (2012). Effectiveness of using games in tertiary-level mathematics classrooms. IJSME.
+
+\end{thebibliography}
+}
+\end{block}
+
+\centering
+\vspace{1cm}
+\includegraphics[width=.5\linewidth]{LSU_Purple_RGB.png} 
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the third column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}
