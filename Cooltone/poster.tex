@@ -1,0 +1,491 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX poster template
+% Created by Renee Dale
+% june 2017
+% for use with Nathaneil Johnston's style file
+% http://www.njohnston.ca/2009/08/latex-poster-template/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\PassOptionsToPackage{svgnames,table}{xcolor}
+\documentclass[final]{beamer}
+\usepackage[table]{xcolor}
+\usepackage[scale=1.24]{beamerposter}
+\usepackage{graphicx}			% allows us to import images
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+\usepackage{multicol} % Required for multiple columns
+\usepackage{tikz} % Required for flow chart
+\usepackage{wrapfig}
+%\usepackage{fancyhdr}
+\usepackage{lipsum} 
+\usepackage[svgnames]{xcolor} 
+\newcommand{\arr}[1]{\left( \begin{array}{clcr} #1 \end{array} \right)}
+%-----------------------------------------------------------
+% Define the column width and poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% The separation I chose is 0.024 and I want 4 columns
+% Then set onecolwid to be (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be 2*onecolwid + sepwid = 0.464
+%-----------------------------------------------------------
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{48in}
+\setlength{\paperheight}{36in}
+\setlength{\sepwid}{0.024\paperwidth}
+\setlength{\onecolwid}{0.22\paperwidth}
+\setlength{\twocolwid}{0.464\paperwidth}
+\setlength{\threecolwid}{0.718\paperwidth}
+\setlength{\topmargin}{-0.75in}
+\usetheme{confposterz}
+\usepackage{exscale}
+\usepackage{setspace}
+\usepackage{textpos} 
+%\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}
+%-----------------------------------------------------------
+% The next part fixes a problem with figure numbering. Thanks Nishan!
+% When including a figure in your poster, be sure that the commands are typed in the following order:
+% \begin{figure}
+% \includegraphics[...]{...}
+% \caption{...}
+% \end{figure}
+% That is, put the \caption after the \includegraphics
+%-----------------------------------------------------------
+
+\usecaptiontemplate{
+\small
+\structure{\insertcaptionname~\insertcaptionnumber:}
+\insertcaption}
+
+%-----------------------------------------------------------
+% Define colours (see beamerthemeconfposter.sty to change these colour definitions)
+%-----------------------------------------------------------
+
+\setbeamercolor{block title}{fg=Blue,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70}
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\itemsep}{0pt}
+%-----------------------------------------------------------
+% Name and authors of poster/paper/research
+%-----------------------------------------------------------
+
+\title{\color{Blue}Bayesian Estimate of the Parameters of a Stochastic \\Differential Model of HIV Incidence in the United States }
+\author{ \textbf{Renee Dale} \& BeiBei Guo}
+\institute{ Department of Experimental Statistics, Louisiana State University }
+\addtobeamertemplate{headline}{}{
+	\begin{tikzpicture}[remember picture,overlay] 
+	\node [shift={(-10 cm,-5cm)}] at (current page.north east) {\includegraphics[height=5cm]{lsu2}}; 
+%	\node [shift={(10 cm,-5cm)}] at (current page.north west) {\includegraphics[height=5cm]{lsu2}}; 
+	\end{tikzpicture} 
+}
+%\vspace{-5cm}
+%\begin{figure}
+%\lhead{	}
+%\end{figure}
+%-----------------------------------------------------------
+% Start the poster itself
+%-----------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}[t]
+
+  	%\vspace*{-1cm}		
+ 									% the [t] option aligns the column's content at the top
+  \begin{columns}[t]	
+
+    \begin{column}{\sepwid}\end{column}			% empty spacer column
+    \begin{column}{\onecolwid}
+
+    	%-----------------------------------------------------------
+    	% Abstract
+    	%-----------------------------------------------------------
+    	\vspace{-1cm}
+    %	\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+    	%	colback=White,colframe=Blue,colbacktitle=Tomato,
+   % 		title=\textbf{Abstract},fonttitle=\bfseries,
+    %		boxed title style={colframe=Blue} ]
+    %\begin{abstract}
+     \begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+    	colback=White,colbacktitle=Blue,title=\textbf{Abstract},fonttitle=\bfseries,colframe=White,
+   	boxed title style={colframe=White} ]
+
+%\textbf{ \color{Blue}  Abstract}
+
+    		%	\begin{wrapfigure}{l}{.3\textwidth}
+    	%		%	\vspace*{-2cm}
+    	%		\includegraphics[scale=.75]{graphic_abstract.jpg}
+    	%	\end{wrapfigure}
+    		\small Current estimates of the HIV epidemic indicate a decrease in the incidence of the disease in the undiagnosed subpopulation over the past 10 years \cite{cd4}. However, a lack of access to care has not been considered when modeling the population. Populations at high risk for contracting HIV are twice as likely to lack access to reliable medical care \cite{cdcrisk,ny}. In this project, we consider three contributors to the HIV population dynamics: susceptible pool exhaustion \cite{cdcdemo}, lack of access to care \cite{cdcrisk,ny}, and increased prevalence of anti-retroviral therapy (ART) \cite{cdcrisk}. We consider the change in the proportion of undiagnosed individuals as the parameter in a simple Markov model. We obtain a conservative estimate using hierarchical Bayesian statistics. The proportional change is used to derive epidemic parameter estimates in a system of stochastic differential equations (SDEs). The models predict that the undiagnosed population may be much larger than currently estimated while still recovering the diagnosed population dynamics. Permutation of model parameters demonstrates the high level of flexibility in the undiagnosed population and reveals an inverse relationship between epidemic parameters. 
+    	
+%    	    \end{abstract}
+    	\end{tcolorbox}
+  %  	\end{tcolorbox}
+      %\begin{abstract}
+      
+      	%     	\color{Black} 
+      
+     % \end{abstract}
+      \vskip1ex
+
+     	%-----------------------------------------------------------
+      % Bayesian Estimates
+      %-----------------------------------------------------------
+      
+       %\begin{block}{Bayesian Estimates}
+       \begin{tcolorbox}[enhanced,sharp corners=uphill,
+colframe=Violet,coltext=White,interior style={left color=Blue,right color=DeepPink},
+       	fontupper=\Large\bfseries,arc=6mm,boxrule=2mm,boxsep=5mm,
+       	borderline={0.3mm}{0.3mm}{white}]
+       	Bayesian Model
+       \end{tcolorbox}
+      %	\begin{multicols}{2}
+    A Markov model $p_t = qp_{t-1}$ is used to estimate the proportional change in the infected populations over time, where $p_t$ is the proportion in the current year and \textit{q} is the proportional change. These random variables are estimated using Bayesian statistics. \\ The sampling model is $x_t\sim Bin(n_t,p_t)$, where $n_{t}$ is population size in the current year. The random variable \textit{q} is taken as a hyperparameter for $p_t$. The random variables to be estimated are $q$ and $p_{t}$, where t = 2005, ..., 2013. We estimate the random variables of undiagnosed and diagnosed subpopulations independently \cite{cd4}.\\ The joint posterior distribution was sampled from using Metropolis-Hastings nested within a Gibbs sampler since the marginal posteriors do not have a closed form.\\ The MLE of $q_u$ is 0.95, and $q_d$ is 1.02. The MLE of the proportions for all years are very close to the CDC estimates.
+      		
+      		%\begin{center}
+      		
+      		%\captionof{figure}{\color{Orange} The Model}
+      		%\end{center}\vspace{1cm}
+      		\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=White,colframe=DarkViolet,colbacktitle=Violet,
+      			title=\textbf{Priors},fonttitle=\bfseries,
+      			boxed title style={colframe=Violet} ]
+      			\small
+      		 	The priors are semi-conjugate independent priors. The prior for q is:
+      		 	\vspace{-.5cm}
+      			$$\pi(q) \propto q^{\alpha-1}exp^{-\beta q}$$
+      			The prior for the random variable $p_{t}$ is a beta centered at the previous proportion, where $\alpha = q p_{t-1}\times 0.8 n_t-1$, and $\beta$ is ($0.8n_t-\alpha$). 
+      				\vspace{-.5cm}
+      			$$\pi(p_{t}) \propto p_t^{\alpha }(1-p_t)^{\beta-1}$$
+      		In the case where t=1, the previous proportion is taken to be the expert opinion of 20\% \cite{pinkerton}.
+      		
+      		\end{tcolorbox}
+      		%\end{proof}
+      	%	\vspace{-.5cm}
+      
+      %	
+      
+     % 	\end{multicols}
+   % \end{block}
+
+    \end{column}
+
+    	%-----------------------------------------------------------
+
+    \begin{column}{\sepwid}\end{column}			% empty spacer column
+    \begin{column}{\threecolwid}	
+    	\vspace{-1cm}				  % create a three-column-wide column and then we will split it up later
+    
+    	%-----------------------------------------------------------
+	% Results
+	%-----------------------------------------------------------
+
+        \begin{tcolorbox}[enhanced,sharp corners=uphill,
+      	colframe=Violet,coltext=White,interior style={left color=Blue,right color=DeepPink},
+      	fontupper=\Large\bfseries,arc=6mm,boxrule=2mm,boxsep=5mm,	boxed title style={colframe=Blue} ,
+      	borderline={0.3mm}{0.3mm}{White}]
+      	Stochastic Differential Model
+      \end{tcolorbox}
+      	%	\begin{multicols}{2}
+      
+	\begin{column}{\onecolwid}
+\vspace{-1.14cm}
+
+	\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+	colback=White,colframe=MidnightBlue,colbacktitle=Blue,
+	title=\textbf{H1: Exhaustion of Susceptibles},fonttitle=\bfseries,
+	boxed title style={colframe=Blue} ]
+	\begin{wrapfigure}{r}{.65\linewidth}
+		\vspace{-.25cm}
+		\begin{flushright}
+			\includegraphics[width=.6\textwidth]{hyp1hd.png}
+			
+		\end{flushright}\vspace{-1.25cm}
+	\centerline {\scriptsize CDC estimates shown as circles.} 
+	\vspace{-1cm}
+	\centerline{\scriptsize Mean of simulations shown as a line.}
+	\end{wrapfigure}
+%	\vskip1ex
+
+\small
+For $S \cong T$, transmission is a function of S. A constant \textit{f} describes the relationship between the size of the susceptible and infected populations:$$S = fT$$
+The transmission term becomes\\
+\vspace{.25cm}
+$ \quad \tau TS \cong\tau fT^2$ \\
+%\vspace{.5cm}
+This gives reasonable diagnosed dynamics but much\\ higher undiagnosed population size.
+
+%	\vskip2exs
+\end{tcolorbox}
+      \vskip.5ex
+   %	         \begin{tcolorbox}[enhanced,sharp corners=uphill,
+   %		colframe=Violet,coltext=White,interior style={left color=Blue,right color=DeepPink},
+   %		fontupper=\normalsize\bfseries,arc=3mm,boxrule=1mm,boxsep=2.5mm,
+   %		borderline={0.3mm}{0.3mm}{white}]
+   %		Stochastic Model
+   %	\end{tcolorbox}
+      	A system of stochastic differential equations are constructed using the estimated \textit{q}: \\
+      	\vskip1ex
+      	{\centering
+      		$ \displaystyle
+      		\begin{aligned} 
+      		dU=(q_u-1)Udt + d\omega_tdt\\ 
+      		dD=(q_d-1)Ddt + d\omega_tdt
+      		\end{aligned}
+      		$ 
+      		\par}
+    
+      
+      	\vskip1ex
+	where $d\omega_t \sim Nor (0,\sigma)$ is Brownian white noise. 
+	\vskip1ex
+	\centerline {\textbf{{\color{Blue} Base Model}}}
+ % \begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+%	colback=White,colbacktitle=Blue,title=\textbf{H0: Simple Model},fonttitle=\bfseries,colframe=White,
+%	boxed title style={colframe=White} ]
+	The simplest model is constructed describing the dynamics of the infected populations. The values of parameters transmission ($\tau$), diagnosis ($\delta$), and death ($\epsilon$) are constrained by \textit{q}:
+      	\vskip1ex
+{\centering
+	$ \displaystyle
+	\begin{aligned} 
+dU =& (\tau (U+D)- \delta U- \epsilon U)dt \\ \cong& (1-q_u)Udt+d\omega_tdt \\=&-0.042 U dt+ d\omega_tdt\\ 
+dD =& (\delta U- \epsilon D)dt \\ \cong& (1-q_d)Ddt+d\omega_tdt \\=& 0.021Ddt+d\omega_tdt\\
+	\end{aligned}
+	$ 
+	\par}
+%\end{tcolorbox}
+      	%\vspace{-7cm}
+       	 %  	\begin{figure}
+       		%\begin{flushright}
+     %  		\includegraphics[scale=1]{sdeh0.jpg}
+       		%		\caption{SDE simulations match the data very well.}
+       		%	\end{flushright}
+     %  	\end{figure} 
+    % 
+      % \vskip1ex
+        % \begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+      %  	colback=White,colframe=Violet,colbacktitle=Violet,
+       % 	title=\textbf{\large Bayesian },fonttitle=\bfseries,
+      %  	boxed title style={colframe=Violet} ]
+       
+    	\vskip.5ex
+    \begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+    	colback=White,colframe=DarkViolet,colbacktitle=Violet,
+    	title=\textbf{Likelihood},fonttitle=\bfseries,
+    	boxed title style={colframe=Violet} ]
+    	\small	
+    	The likelihood function is a binomial. For t = 2005, ..., 2013:
+    	\begin{align*}
+    	\mathcal{L}(p_{t}|x_t) &\propto \Pi_{i=1}^{n_t} p_{t}^{x_i} (1-p_{t})^{n_t-x_i}\\
+    	&\propto p_{t}^{\Sigma_{i=1}^{n_t} x_i} (1-p_{t})^{\Sigma_{i=1}^{n_t} (1-x_i)}
+    	\end{align*}
+    	
+    \end{tcolorbox}
+\vskip1ex
+       \begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=White,colframe=DarkViolet,colbacktitle=Violet,
+       	title=\textbf{Posterior},fonttitle=\bfseries,
+       	boxed title style={colframe=Violet} ]
+       			\small
+    	 	The joint posterior distribution is proportional to the priors multiplied by the likelihoods for all 9 years:
+       		\begin{align*}
+       		&\Pr(p_{1},p_{2}, ... ,p_{9},q) \propto 
+       		\pi(q)\times \Pi_{t=1}^9\pi(p_{t}|q,p_{t-1})\\ &\times \mathcal{L}(p_{1}|x_{t=1})
+       		\times \mathcal{L}(p_{2}|x_{t=2})\times ... \times \mathcal{L}(p_{9}|x_{t=9})
+       		\end{align*}
+       		The posterior full conditional of $p_t$ for t = 2005, ..., 2012 is:
+       		\begin{align*}
+       	&	\Pr(p_{t}|x_{t=t},p_{t-1},q) = \mathcal{L}(p_t|x_{t=t}) \\&\times \pi(p_t|q,p_{t-1}) \times \pi(p_{t+1}|q,p_t) 
+       		\end{align*}
+       		The posterior full conditional of 2013, the 9th year, is:
+       		\begin{align*}
+       		&	\Pr(p_{9}|x_{t=9},p_{8},q) = \mathcal{L}(p_{9}|x_{t=9}) \times \pi(p_{9}|q,p_{8}) 
+       		\end{align*}
+       	
+       \end{tcolorbox}
+   \vspace{-.5cm}
+    	\centerline{\scriptsize \textit{Note:	Population sizes are represented as a proportion of the population size in 2005. }}
+     % 	\begin{column}{\onecolwid}
+  % \end{tcolorbox}
+      
+            		\end{column}
+            	  \begin{column}{\sepwid}\end{column}		
+          \begin{column}{\twocolwid}
+
+
+            	\begin{column}{\onecolwid}
+\vspace{-2.5cm}
+      	\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+      colback=White,colframe=MidnightBlue,colbacktitle=Blue,
+      	title=\textbf{H2: Lack of Access to Care},fonttitle=\bfseries,
+      	boxed title style={colframe=Blue} ]
+      	 \begin{figure}
+      		%\begin{flushright}
+      		\includegraphics[width=.6\textwidth]{hyp3hd.png}
+      	%	\caption{\scriptsize   	CDC estimates shown as circles. Mean of simulations shown as a line.}
+      		 %	\caption{This hypothesis fits all the data.}
+      		%	\end{flushright}
+      	\end{figure}
+	\vspace{-1cm}
+\centerline {\scriptsize CDC estimates shown as circles. Mean of simulations shown as a line.}
+ \small We consider the diagnosis rate to be a constant, independent of the size of the undiagnosed population. This causes the undiagnosed population to accumulate. Similar to H1, the diagnosed population size is recovered well, but the undiagnosed population is much larger.
+
+      \end{tcolorbox}
+      \vskip.5ex
+  	The increased \textbf{\color{Purple}death rate} due to infection $\epsilon$ is 0.01 \cite{cdc}. The \textbf{\color{Purple}diagnosis rate} $\delta$ is estimated by:
+  %\begin{align*}
+  $$\delta U = q_dD+ \epsilon D= \frac{0.03D_{2005}}{U_{2005}} = 0.1076$$
+  %\end{align*}
+  
+  		\vskip1ex
+  	\end{column}
+    \begin{column}{\sepwid}\end{column}		
+%   \vskip2.5ex
+  \begin{column}{\onecolwid}
+ \vspace{-2.5cm}
+  	\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  		colback=White,colframe=MidnightBlue,colbacktitle=Blue,
+  		title=\textbf{H3: ART Usage},fonttitle=\bfseries,
+  		boxed title style={colframe=Blue} ]
+  		\begin{figure}%{r}{.75\linewidth}
+  			%\begin{flushright}
+  			\includegraphics[scale=.4]{hyp2hd.jpg}
+  				% 	\caption{}
+  			%	\end{flushright}
+  		\end{figure}
+  	\vspace{-1cm}
+\centerline {\scriptsize CDC estimates shown as circles. Mean of simulations shown as a line.}
+\small 96\% of diagnosed individuals take antiretroviral therapies (ART) \cite{cdcrisk}. The size of the infected population able to transmit the disease is reduced by $0.96D$. This model agrees best with both undiagnosed and diagnosed estimates.
+  	\end{tcolorbox}
+  %\begin{tcolorbox}[enhanced,sharp corners=uphill,
+  %	colframe=Violet,coltext=White,interior style={left color=Blue,right color=DeepPink},
+  %	fontupper=\normalsize\bfseries,arc=3mm,boxrule=1mm,boxsep=2.5mm,
+  %	borderline={0.3mm}{0.3mm}{white}]
+  %	SDE Results
+ % \end{tcolorbox}
+       \vskip.5ex
+	and the \textbf{\color{Purple}transmission rate} $\tau$ is estimated by:
+%\begin{align*}
+$$\tau (U+D) = (1-q_u)U+ \delta U+ \epsilon U $$
+$$\tau = \frac{0.076U_{2005}}{U_{2005}+D_{2005}} =0.0166$$
+%\end{align*}
+  	%Exhaustion of the susceptible population is modeled by considering transmission to be a function of both S and the total infected population. %The simulations show a good match to the diagnosed population data, but much higher undiagnosed population size. %By considering the diagnosis rate as independent of the undiagnosed population we obtain 
+  	          \end{column}  
+            \vskip1ex	
+            \begin{column}{\twocolwid}
+
+
+ %\vskip2.5ex
+    \begin{tcolorbox}[enhanced,sharp corners=uphill,
+ 	colframe=Violet,coltext=White,interior style={left color=Blue,right color=DeepPink},
+ 	fontupper=\Large\bfseries,arc=6mm,boxrule=2mm,boxsep=5mm,
+ 	borderline={0.3mm}{0.3mm}{white}]
+ 	Conclusion
+ \end{tcolorbox}
+\begin{column}{\onecolwid}
+  	\vspace{-3cm}
+	\begin{multicols}{2}
+
+
+	\begin{figure}
+	\includegraphics[scale=.3]{meshdhd.jpg}
+%	\caption{Diagnosed population space.}
+\end{figure}
+\begin{figure}
+	\includegraphics[scale=.3]{meshdhu.jpg}
+	%	\caption{Diagnosed population space.}
+\end{figure}
+\end{multicols}
+\vspace{-.5cm}
+\centerline {\scriptsize Diagnosed (L) and undiagnosed (R) populations as a percentage of 2005 population size. }
+
+%\end{multicols}
+All three models recover the CDC estimates of the diagnosed population dynamics. This suggests that the undiagnosed population may be much larger than the current estimates due to factors such as lack of access to care.\\ 
+The impact of the epidemic parameters on the system was visualized by permutation of $\tau$ and $\delta$ with the base model over a fine mesh.
+The resulting surfaces were then sliced along the XY axis for diagnosed proportion values between 0.8 and 0.95. \\%The predicted size of the undiagnosed population is highly variable in this region. \\
+\begin{table}    
+\begin{centering}
+\begin{tikzpicture}
+\node (table) [inner sep=10pt] {
+	\rowcolors{1}{White}{White}
+	\begin{tabular}{@{}cc@{}}
+	\arrayrulecolor{Violet}
+	{ \color{Violet} \textbf{Diagnosed}} & { \color{Violet} \textbf{Undiagnosed \quad}}\\%& Diagnosis \\
+		\midrule
+	0.8 - 0.95 & 0.0031 - 1.5 
+	%& 0.02-0.03
+	\end{tabular}  };
+\draw [rounded corners=.5em,line width=2pt,Violet] (table.north west) rectangle (table.south east);
+\end{tikzpicture}
+\end{centering}
+\end{table}
+The size of the undiagnosed population spans a much greater range than the diagnosed population. Accurate estimates of this population seem 
+\end{column}
+  \begin{column}{\sepwid}\end{column}		
+  \begin{column}{\onecolwid}
+
+
+% \begin{block}{Conclusion}
+ 
+ 	% To determine the area of interest for the unknown parameters transmission and diagnosis rate, the model was simulated over 1000 points between 0 and .5 for diagnosis, and 0 and .1 for transmission rate. The slice corresponding to the 2013 95\% CI. for the observed diagnosed population is shown on the XY plane. The bulk of the literature puts the transmission rate at 0.4\% [cite], which implies that the diagnosis rate is quite small. 
+ %\end{block}
+%\end{column}
+  	\vspace{-3cm}
+  	\begin{multicols}{2}
+\begin{figure}
+	\includegraphics[scale=.3]{slicehdd.jpg}
+	%	\caption{Surface slice of the effect of transmission and diagnosis rates on the observed diagnosed populations.}
+\end{figure}
+\begin{figure}
+	\includegraphics[scale=.3]{slicehdu.jpg}
+	%	\caption{Surface slice of the effect of transmission and diagnosis rates on the observed diagnosed populations.}
+\end{figure}
+
+  	\end{multicols}
+\vspace{-1cm}
+\centerline {\scriptsize Slices of the diagnosed (L) and undiagnosed (R) surfaces. }
+unreliable without knowledge of the true value of $\delta$.
+ Direct computations show the inverse relationship betweeen transmission and diagnosis rates:
+$$\delta=\frac{b}{\tau}$$ where b = 0.003 for a diagnosed proportion of 0.95. 
+\vskip1ex
+
+  %\lipsum[1]
+  
+
+      \begin{tcolorbox}[enhanced,sharp corners=uphill,
+  	colframe=Violet,coltext=White,interior style={left color=Blue,right color=DeepPink},
+  	fontupper=\normalsize\bfseries,arc=3mm,boxrule=1mm,boxsep=2.5mm,
+  	borderline={0.3mm}{0.3mm}{white}]
+  	References
+  \end{tcolorbox}
+  \footnotesize{\begin{thebibliography}{99}
+  	\bibitem{cd4}Song, R., et al. Using CD4 Data to Estimate HIV Incidence, Prevalence, and Percent of Undiagnosed Infections in the United States. JAIDS 74, 3-9 (2017). %numbers
+  	\bibitem{cdcrisk}CDC. HIV Surveillance Special Report 17. %95% ART, 50% poverty
+ 	\bibitem{ny} Villarosa, L. America's Hidden H.I.V. Epidemic. NY Times. 2017.
+ 	\bibitem{cdcdemo}Centers for Disease Control and Prevention. HIV Surveillance Report, 2015; vol. 27.
+ 	\bibitem{pinkerton} Pinkerton S. D., HIV Transmission Rate Modeling: A Primer, Review, and Extension, AIDS Behav. 2012 May ; 16(4): 791-796.
+  	\bibitem{cdc}CDC. HIV Surveillance Supplemental Report 2016;21(No. 4).
+  	\bibitem{cdc14} CDC. HIV Surveillance Report, 2015; vol. 27.
+
+  \end{thebibliography}}
+ % \end{block}
+  %	\end{multicols}
+    \end{column}
+              	\end{column}
+      	      	%	\end{multicols}
+      %\end{block}
+     
+      \vskip2.5ex
+    \end{column}
+            \end{column}
+       % \end{column}
+  \begin{column}{\sepwid}\end{column}			% empty spacer column
+ \end{columns}
+\end{frame}
+\end{document}
